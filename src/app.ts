@@ -19,7 +19,14 @@ const app = new App({
         authProvider,
     ],
     middlewares: [
-        httpMiddleware.for(cors())
+        httpMiddleware.for(cors({
+            origin: '*',
+            allowedHeaders: '*',
+            exposedHeaders: '*',
+            preflightContinue: true,
+            methods: '*',
+            credentials: true,
+        })),
     ],
     imports: [new FrameworkModule({
         debug: true,
