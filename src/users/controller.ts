@@ -17,6 +17,7 @@ export class UsersController {
     ) {
     }
 
+    @http.OPTIONS('/sign-in')
     @http.POST('/sign-in')
     async register_login(
         dto: HttpBody<{
@@ -46,11 +47,13 @@ export class UsersController {
         return { user, token };
     }
 
+    @http.OPTIONS()
     @http.GET()
     getUsers() {
         return this.db.query(ShitterUser).find();
     }
 
+    @http.OPTIONS()
     @http.GET('/me')
     getMe(user: ShitterUser) {
         return user;
