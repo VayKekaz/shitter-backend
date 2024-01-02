@@ -2,9 +2,9 @@ FROM node:18-alpine as base
 
 FROM base as build
 WORKDIR /app
-COPY package.json yarn.lock tsconfig*.json .yarnrc.yml nest-cli.json ./
+COPY package.json yarn.lock tsconfig*.json .yarnrc.yml ./
 RUN yarn
-ADD src ./
+COPY src/ ./src/
 RUN yarn run build
 
 
@@ -13,4 +13,4 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn --production
 COPY --from=build /app/dist/ ./dist/
-ENTRYPOINT ["yarn", "run", "start:prod"]
+ENTRYPOINT ["node", "dist/app", "server:start"]
