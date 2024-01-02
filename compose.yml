@@ -5,11 +5,11 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-        restart: 'always'
+        restart: always
         env_file:
             - .env
         ports:
-            - "8080:8080"
+            - '8080:8080'
         depends_on:
             db:
                 condition: service_healthy
@@ -23,7 +23,7 @@ services:
         volumes:
             - pgdata:/data/postgres
         healthcheck:
-            test: [ "CMD", "pg_isready", "-U", "${POSTGRES_USER}", "-d", "${POSTGRES_DB}" ]
+            test: [ 'CMD', 'pg_isready', '-U', '${POSTGRES_USER}', '-d', '${POSTGRES_DB}' ]
             interval: 5s
             timeout: 60s
             retries: 5

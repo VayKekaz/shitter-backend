@@ -2,11 +2,11 @@ import { App } from '@deepkit/app';
 import { FrameworkModule } from '@deepkit/framework';
 import { httpMiddleware } from '@deepkit/http';
 import { JSONTransport, Logger } from '@deepkit/logger';
+import cors from 'cors';
 import { Env } from './app/config';
 import { ShitterDatabase } from './datasource/database';
 import { authProvider } from './users/authProvider';
 import { UsersController } from './users/controller';
-import { CorsMiddleware } from './util/corsMiddleware';
 
 
 const app = new App({
@@ -19,7 +19,7 @@ const app = new App({
         authProvider,
     ],
     middlewares: [
-        httpMiddleware.for(CorsMiddleware),
+        httpMiddleware.for(cors())
     ],
     imports: [new FrameworkModule({
         debug: true,
