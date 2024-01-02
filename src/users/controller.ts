@@ -33,7 +33,7 @@ export class UsersController {
 
         if (user) {
             if (!await user.isCorrectPassword(dto.password))
-                new HttpUnauthorizedError('Incorrect password.');
+                throw new HttpUnauthorizedError('Incorrect password.');
         } else {
             user = await ShitterUser.create(dto.username, dto.password);
 
