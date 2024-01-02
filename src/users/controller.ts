@@ -1,7 +1,7 @@
-import { http, HttpBody, HttpNotFoundError, HttpUnauthorizedError } from '@deepkit/http';
+import { http, HttpBody, HttpUnauthorizedError } from '@deepkit/http';
 import { Logger } from '@deepkit/logger';
-import { Database, ItemNotFound } from '@deepkit/orm';
-import { MaxLength, serialize, ValidationError } from '@deepkit/type';
+import { Database } from '@deepkit/orm';
+import { MaxLength, serialize } from '@deepkit/type';
 import * as jwt from 'jsonwebtoken';
 import { Env } from '../app/config';
 import { ShitterUser } from './model';
@@ -17,7 +17,6 @@ export class UsersController {
     ) {
     }
 
-    @http.OPTIONS('/sign-in')
     @http.POST('/sign-in')
     async register_login(
         dto: HttpBody<{
@@ -47,13 +46,11 @@ export class UsersController {
         return { user, token };
     }
 
-    @http.OPTIONS()
     @http.GET()
     getUsers() {
         return this.db.query(ShitterUser).find();
     }
 
-    @http.OPTIONS()
     @http.GET('/me')
     getMe(user: ShitterUser) {
         return user;

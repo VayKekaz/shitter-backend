@@ -1,12 +1,11 @@
 import { App } from '@deepkit/app';
 import { FrameworkModule } from '@deepkit/framework';
-import { http, HttpMiddleware, httpMiddleware, HttpRequest, HttpResponse } from '@deepkit/http';
-import { JSONTransport, Logger } from '@deepkit/logger';
-import cors from 'cors';
+import { httpMiddleware } from '@deepkit/http';
 import { Env } from './app/config';
 import { ShitterDatabase } from './datasource/database';
 import { authProvider } from './users/authProvider';
 import { UsersController } from './users/controller';
+import { CorsEventListener, corsMiddleware } from './util/CorsEventListener';
 
 
 const app = new App({
@@ -19,15 +18,9 @@ const app = new App({
         authProvider,
     ],
     middlewares: [
-        httpMiddleware.for(cors({
-            origin: '*',
-            allowedHeaders: '*',
-            exposedHeaders: '*',
-            preflightContinue: true,
-            methods: '*',
-            credentials: true,
-        })),
+        httpMiddleware.for(corsMiddleware),
     ],
+    listeners: [CorsEventListener],
     imports: [new FrameworkModule({
         debug: true,
         migrateOnStartup: true,
