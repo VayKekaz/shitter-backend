@@ -34,7 +34,7 @@ $ npm run app server:start
 $ ./app.ts server:start
 ```
 
-Another is an example `hello` from `./src/controller/hello-world.cli.ts`, which you can start as follows:
+Another is an example `hello` from `./src/controller/hello-world.ProperMigrationUpCommand.ts`, which you can start as follows:
 
 ```sh
 npm run app hello World!

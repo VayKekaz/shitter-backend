@@ -2,11 +2,13 @@ import { http, HttpBody, HttpUnauthorizedError } from '@deepkit/http';
 import { Logger } from '@deepkit/logger';
 import { Database } from '@deepkit/orm';
 import { MaxLength, serialize } from '@deepkit/type';
+import { Provider } from '@vaykekaz/di-container';
 import * as jwt from 'jsonwebtoken';
 import { Env } from '../app/config';
 import { ShitterUser } from './model';
 
 
+@Provider('controller')
 @http.controller('/users')
 export class UsersController {
 

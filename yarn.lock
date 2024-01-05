@@ -429,7 +429,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@deepkit/api-console-gui@npm:^1.0.1-alpha.108, @deepkit/api-console-gui@npm:^1.0.1-alpha.72":
+"@deepkit/api-console-gui@npm:^1.0.1-alpha.108":
   version: 1.0.1-alpha.108
   resolution: "@deepkit/api-console-gui@npm:1.0.1-alpha.108"
   checksum: 201688f0b867582e6314ccd3d1a13a7db2e887732f5084c3961d6963c6ec81c0aa7230682252d82aad3efe339494d711b040677068340f1d45d97fb7623e080d
@@ -457,7 +457,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@deepkit/app@npm:^1.0.1-alpha.72":
+"@deepkit/app@npm:^1.0.1-alpha.108":
   version: 1.0.1-alpha.108
   resolution: "@deepkit/app@npm:1.0.1-alpha.108"
   dependencies:
@@ -476,7 +476,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@deepkit/broker@npm:^1.0.1-alpha.72":
+"@deepkit/broker@npm:^1.0.1-alpha.108":
   version: 1.0.1-alpha.108
   resolution: "@deepkit/broker@npm:1.0.1-alpha.108"
   dependencies:
@@ -494,7 +494,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@deepkit/bson@npm:^1.0.1-alpha.72":
+"@deepkit/bson@npm:^1.0.1-alpha.108":
   version: 1.0.1-alpha.108
   resolution: "@deepkit/bson@npm:1.0.1-alpha.108"
   peerDependencies:
@@ -504,7 +504,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@deepkit/core-rxjs@npm:^1.0.1-alpha.72":
+"@deepkit/core-rxjs@npm:^1.0.1-alpha.108":
   version: 1.0.1-alpha.108
   resolution: "@deepkit/core-rxjs@npm:1.0.1-alpha.108"
   peerDependencies:
@@ -514,7 +514,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@deepkit/core@npm:^1.0.1-alpha.72":
+"@deepkit/core@npm:^1.0.1-alpha.108":
   version: 1.0.1-alpha.108
   resolution: "@deepkit/core@npm:1.0.1-alpha.108"
   dependencies:
@@ -524,7 +524,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@deepkit/event@npm:^1.0.1-alpha.72":
+"@deepkit/event@npm:^1.0.1-alpha.108":
   version: 1.0.1-alpha.108
   resolution: "@deepkit/event@npm:1.0.1-alpha.108"
   peerDependencies:
@@ -568,7 +568,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@deepkit/framework@npm:^1.0.1-alpha.72":
+"@deepkit/framework@npm:^1.0.1-alpha.108":
   version: 1.0.1-alpha.108
   resolution: "@deepkit/framework@npm:1.0.1-alpha.108"
   dependencies:
@@ -619,7 +619,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@deepkit/http@npm:^1.0.1-alpha.72":
+"@deepkit/http@npm:^1.0.1-alpha.108":
   version: 1.0.1-alpha.108
   resolution: "@deepkit/http@npm:1.0.1-alpha.108"
   dependencies:
@@ -640,7 +640,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@deepkit/injector@npm:^1.0.1-alpha.72":
+"@deepkit/injector@npm:^1.0.1-alpha.108":
   version: 1.0.1-alpha.108
   resolution: "@deepkit/injector@npm:1.0.1-alpha.108"
   peerDependencies:
@@ -650,7 +650,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@deepkit/logger@npm:^1.0.1-alpha.72":
+"@deepkit/logger@npm:^1.0.1-alpha.108":
   version: 1.0.1-alpha.108
   resolution: "@deepkit/logger@npm:1.0.1-alpha.108"
   dependencies:
@@ -716,7 +716,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@deepkit/rpc-tcp@npm:^1.0.1-alpha.72":
+"@deepkit/rpc-tcp@npm:^1.0.1-alpha.108":
   version: 1.0.1-alpha.108
   resolution: "@deepkit/rpc-tcp@npm:1.0.1-alpha.108"
   dependencies:
@@ -729,7 +729,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@deepkit/rpc@npm:^1.0.1-alpha.72":
+"@deepkit/rpc@npm:^1.0.1-alpha.108":
   version: 1.0.1-alpha.108
   resolution: "@deepkit/rpc@npm:1.0.1-alpha.108"
   dependencies:
@@ -746,7 +746,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@deepkit/sql@npm:^1.0.1-alpha.72":
+"@deepkit/sql@npm:^1.0.1-alpha.108":
   version: 1.0.1-alpha.108
   resolution: "@deepkit/sql@npm:1.0.1-alpha.108"
   dependencies:
@@ -769,7 +769,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@deepkit/sqlite@npm:^1.0.1-alpha.72":
+"@deepkit/sqlite@npm:^1.0.1-alpha.108":
   version: 1.0.1-alpha.108
   resolution: "@deepkit/sqlite@npm:1.0.1-alpha.108"
   dependencies:
@@ -786,7 +786,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@deepkit/stopwatch@npm:^1.0.1-alpha.72":
+"@deepkit/stopwatch@npm:^1.0.1-alpha.108":
   version: 1.0.1-alpha.108
   resolution: "@deepkit/stopwatch@npm:1.0.1-alpha.108"
   peerDependencies:
@@ -796,7 +796,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@deepkit/template@npm:^1.0.1-alpha.72":
+"@deepkit/template@npm:^1.0.1-alpha.108":
   version: 1.0.1-alpha.108
   resolution: "@deepkit/template@npm:1.0.1-alpha.108"
   dependencies:
@@ -818,7 +818,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@deepkit/type-compiler@npm:^1.0.1-alpha.72":
+"@deepkit/type-compiler@npm:^1.0.1-alpha.108":
   version: 1.0.1-alpha.108
   resolution: "@deepkit/type-compiler@npm:1.0.1-alpha.108"
   dependencies:
@@ -844,7 +844,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@deepkit/type@npm:^1.0.1-alpha.72":
+"@deepkit/type@npm:^1.0.1-alpha.108":
   version: 1.0.1-alpha.108
   resolution: "@deepkit/type@npm:1.0.1-alpha.108"
   dependencies:
@@ -858,7 +858,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@deepkit/workflow@npm:^1.0.1-alpha.72":
+"@deepkit/workflow@npm:^1.0.1-alpha.108":
   version: 1.0.1-alpha.108
   resolution: "@deepkit/workflow@npm:1.0.1-alpha.108"
   peerDependencies:
@@ -2115,6 +2115,15 @@ __metadata:
   dependencies:
     debug: "npm:^4.1.1"
   checksum: 9b5d0a80864f1c7920cb353ffb5e0f6c8234edba53bd846a1264699cf3bad4a560818db2b724a8d165cd44f385d8ffc429cc4fc3a26061a52b31948ccb797edc
+  languageName: node
+  linkType: hard
+
+"@vaykekaz/di-container@npm:^0.0.2":
+  version: 0.0.2
+  resolution: "@vaykekaz/di-container@npm:0.0.2"
+  peerDependencies:
+    reflect-metadata: ^0.2.1
+  checksum: 67371e54afb403b8b9831935e0e3547dd2fe1e35252dbbb4f067d6c429fe1549cbae10d11275cc15ab944077ae8069981f67fd3519fc1c9415d774c5207eed37
   languageName: node
   linkType: hard
 
@@ -6030,33 +6039,34 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "shitter-backend@workspace:."
   dependencies:
-    "@deepkit/api-console-gui": "npm:^1.0.1-alpha.72"
-    "@deepkit/app": "npm:^1.0.1-alpha.72"
-    "@deepkit/broker": "npm:^1.0.1-alpha.72"
-    "@deepkit/bson": "npm:^1.0.1-alpha.72"
-    "@deepkit/core": "npm:^1.0.1-alpha.72"
-    "@deepkit/core-rxjs": "npm:^1.0.1-alpha.72"
-    "@deepkit/event": "npm:^1.0.1-alpha.72"
+    "@deepkit/api-console-gui": "npm:^1.0.1-alpha.108"
+    "@deepkit/app": "npm:^1.0.1-alpha.108"
+    "@deepkit/broker": "npm:^1.0.1-alpha.108"
+    "@deepkit/bson": "npm:^1.0.1-alpha.108"
+    "@deepkit/core": "npm:^1.0.1-alpha.108"
+    "@deepkit/core-rxjs": "npm:^1.0.1-alpha.108"
+    "@deepkit/event": "npm:^1.0.1-alpha.108"
     "@deepkit/filesystem": "npm:^1.0.1-alpha.108"
-    "@deepkit/framework": "npm:^1.0.1-alpha.72"
-    "@deepkit/http": "npm:^1.0.1-alpha.72"
-    "@deepkit/injector": "npm:^1.0.1-alpha.72"
-    "@deepkit/logger": "npm:^1.0.1-alpha.72"
+    "@deepkit/framework": "npm:^1.0.1-alpha.108"
+    "@deepkit/http": "npm:^1.0.1-alpha.108"
+    "@deepkit/injector": "npm:^1.0.1-alpha.108"
+    "@deepkit/logger": "npm:^1.0.1-alpha.108"
     "@deepkit/orm": "npm:^1.0.1-alpha.108"
     "@deepkit/postgres": "npm:^1.0.1-alpha.108"
-    "@deepkit/rpc": "npm:^1.0.1-alpha.72"
-    "@deepkit/rpc-tcp": "npm:^1.0.1-alpha.72"
-    "@deepkit/sql": "npm:^1.0.1-alpha.72"
-    "@deepkit/sqlite": "npm:^1.0.1-alpha.72"
-    "@deepkit/stopwatch": "npm:^1.0.1-alpha.72"
-    "@deepkit/template": "npm:^1.0.1-alpha.72"
-    "@deepkit/type": "npm:^1.0.1-alpha.72"
-    "@deepkit/type-compiler": "npm:^1.0.1-alpha.72"
-    "@deepkit/workflow": "npm:^1.0.1-alpha.72"
+    "@deepkit/rpc": "npm:^1.0.1-alpha.108"
+    "@deepkit/rpc-tcp": "npm:^1.0.1-alpha.108"
+    "@deepkit/sql": "npm:^1.0.1-alpha.108"
+    "@deepkit/sqlite": "npm:^1.0.1-alpha.108"
+    "@deepkit/stopwatch": "npm:^1.0.1-alpha.108"
+    "@deepkit/template": "npm:^1.0.1-alpha.108"
+    "@deepkit/type": "npm:^1.0.1-alpha.108"
+    "@deepkit/type-compiler": "npm:^1.0.1-alpha.108"
+    "@deepkit/workflow": "npm:^1.0.1-alpha.108"
     "@types/bcrypt": "npm:^5.0.2"
     "@types/cors": "npm:^2.8.17"
     "@types/jest": "npm:^28.1.6"
     "@types/jsonwebtoken": "npm:^9.0.5"
+    "@vaykekaz/di-container": "npm:^0.0.2"
     bcrypt: "npm:^5.1.1"
     cors: "npm:^2.8.5"
     faker: "npm:^5.5.3"

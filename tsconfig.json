@@ -10,7 +10,7 @@
     "moduleResolution": "node"
   },
   "reflection": true,
-  "files": [
-    "src/app.ts"
+  "include": [
+    "src"
   ]
 }

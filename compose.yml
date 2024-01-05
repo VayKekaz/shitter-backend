@@ -8,11 +8,29 @@ services:
         restart: always
         env_file:
             - .env
+        environment:
+            POSTGRES_HOST: db
         ports:
             - '8080:8080'
         depends_on:
             db:
                 condition: service_healthy
+            migration:
+                condition: service_completed_successfully
+
+    migration:
+        build:
+            context: .
+            dockerfile: migration.Dockerfile
+        restart: on-failure
+        env_file:
+            - .env
+        environment:
+            POSTGRES_HOST: db
+        depends_on:
+            db:
+                condition: service_healthy
+
     db:
         image: postgres:16-alpine
         restart: always
@@ -20,6 +38,8 @@ services:
             - .env
         environment:
             PGDATA: /data/postgres
+        ports:
+            - "5432:5432"
         volumes:
             - pgdata:/data/postgres
         healthcheck:
