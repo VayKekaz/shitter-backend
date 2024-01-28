@@ -4,12 +4,14 @@ import { Database } from '@deepkit/orm';
 import { MaxLength, serialize } from '@deepkit/type';
 import { Provider } from '@vaykekaz/di-container';
 import * as jwt from 'jsonwebtoken';
-import { Env } from '../app/config';
-import { ShitterUser } from './model';
+import { Env } from '../../app/config';
+import { ShitterAuthorization } from './authProvider';
+import { ShitterUser, ShitterUserDto } from './model';
 
 
 @Provider('controller')
 @http.controller('/users')
+@http.group('Users')
 export class UsersController {
 
     constructor(
@@ -44,17 +46,17 @@ export class UsersController {
             await session.commit();
         }
 
-        const token = jwt.sign(serialize<ShitterUser>(user), this.secret);
+        const token = jwt.sign(serialize<ShitterUserDto>(user), this.secret);
         return { user, token };
     }
 
     @http.GET()
-    getUsers() {
+    getUsers(): Promise<Array<ShitterUser>> {
         return this.db.query(ShitterUser).find();
     }
 
     @http.GET('/me')
-    getMe(user: ShitterUser) {
-        return user;
+    getMe(auth: ShitterAuthorization): ShitterUserDto | null {
+        return auth.user;
     }
 }

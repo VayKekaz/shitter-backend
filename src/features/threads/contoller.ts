@@ -1,13 +1,15 @@
 import { http, HttpAccessDeniedError, HttpBody, HttpNotFoundError, HttpQueries } from '@deepkit/http';
 import { Database } from '@deepkit/orm';
 import { Provider } from '@vaykekaz/di-container';
+import { ShitterAuthorization } from '../users/authProvider';
 import { ShitterUser } from '../users/model';
 import { Pagination } from '../util/pagination';
 import { ShitterThread } from './model';
 
 
-@http.controller('/threads')
 @Provider('controller')
+@http.controller('/threads')
+@http.group('Threads')
 export class ThreadsController {
 
     constructor(
@@ -43,13 +45,13 @@ export class ThreadsController {
             title: ShitterThread['title']
             content?: ShitterThread['content']
         }>,
-        user?: ShitterUser,
+        auth: ShitterAuthorization,
     ): Promise<ShitterThread> {
-        if (!user)
+        if (!auth.user)
             throw new HttpAccessDeniedError('You must be signed in to create a thread.');
 
         const created = new ShitterThread(
-            await this.db.query(ShitterUser).filter({ id: user.id }).findOne(),
+            await this.db.query(ShitterUser).filter({ id: auth.user.id }).findOne(),
             body.title,
             body.content,
         );
@@ -62,8 +64,9 @@ export class ThreadsController {
     }
 }
 
-@http.controller('/users/:userId/threads')
 @Provider('controller')
+@http.controller('/users/:userId/threads')
+@http.group('Users', 'Threads')
 export class UserThreadsController {
 
     constructor(

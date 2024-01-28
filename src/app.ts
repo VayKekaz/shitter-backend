@@ -1,3 +1,4 @@
+import { ApiConsoleModule } from '@deepkit/api-console-module';
 import { App } from '@deepkit/app';
 import { FrameworkModule } from '@deepkit/framework';
 import { httpMiddleware } from '@deepkit/http';
@@ -5,8 +6,8 @@ import { Database } from '@deepkit/orm';
 import { PostgresDatabaseAdapter } from '@deepkit/postgres';
 import { ProviderScanner } from '@vaykekaz/di-container';
 import { Env } from './app/config';
-import { authProvider } from './users/authProvider';
-import { corsMiddleware } from './util/CorsEventListener';
+import { authProvider } from './features/users/authProvider';
+import { corsMiddleware } from './features/util/CorsEventListener';
 
 
 (async () => {
@@ -17,12 +18,15 @@ import { corsMiddleware } from './util/CorsEventListener';
 
 
     const app = new App({
+
         config: Env,
+
         controllers: [...controllerScanner.providers],
+
         providers: [
             ...providerScanner.providers,
             authProvider,
-            {
+            { // Declared here due to async initialization
                 provide: Database,
                 useFactory: (env: Env) => new Database(
                     new PostgresDatabaseAdapter({
@@ -36,16 +40,23 @@ import { corsMiddleware } from './util/CorsEventListener';
                 ),
             },
         ],
+
         middlewares: [
             httpMiddleware.for(corsMiddleware),
         ],
+
         listeners: [...eventListenerScanner.providers],
-        imports: [new FrameworkModule({
-            debug: true,
-            // must be path from project root, e.g. src/migrations
-            migrationDir: 'src/migrations',
-            broker: { startOnBootstrap: false },
-        })],
+
+        imports: [
+            new FrameworkModule({
+                debug: true,
+                // must be path from project root, i.e. src/migrations
+                migrationDir: 'src/migrations',
+                broker: { startOnBootstrap: true },
+            }),
+            new ApiConsoleModule({ path: '/api' }),
+        ],
+
     });
 
     app.loadConfigFromEnv({
@@ -56,11 +67,13 @@ import { corsMiddleware } from './util/CorsEventListener';
 
     app.setup((module, config: Env) => {
         if (config.environment === 'production') {
-            //enable logging JSON messages instead of formatted strings
+            // enable logging JSON messages instead of formatted strings
             // module.setupGlobalProvider<Logger>().setTransport([new JSONTransport]);
 
-            //disable debugging
+            // disable debugging
             module.getImportedModuleByClass(FrameworkModule).configure({ debug: false });
+            // disable api docs
+            module.getImportedModuleByClass(ApiConsoleModule).configure({ listen: false });
         }
     });
 

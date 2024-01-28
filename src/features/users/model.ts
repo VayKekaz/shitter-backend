@@ -30,3 +30,5 @@ export class ShitterUser {
         return compare(password, this.pwhash);
     }
 }
+
+export type ShitterUserDto = Pick<ShitterUser, 'id' | 'username'>

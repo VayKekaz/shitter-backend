@@ -2,12 +2,14 @@ import { http, HttpAccessDeniedError, HttpBody, HttpQueries } from '@deepkit/htt
 import { Database } from '@deepkit/orm';
 import { Provider } from '@vaykekaz/di-container';
 import { ShitterThread } from '../threads/model';
+import { ShitterAuthorization } from '../users/authProvider';
 import { ShitterUser } from '../users/model';
 import { ThreadPost } from './model';
 
 
-@http.controller('/threads/:threadId/posts')
 @Provider('controller')
+@http.controller('/threads/:threadId/posts')
+@http.group('Threads', 'Posts')
 export class PostsController {
 
     constructor(
@@ -27,19 +29,19 @@ export class PostsController {
     }
 
     @http.POST()
-    async createThread(
+    async createPost(
         threadId: ShitterThread['id'],
         body: HttpBody<{
             content: ThreadPost['content']
         }>,
-        user?: ShitterUser,
+        auth: ShitterAuthorization,
     ): Promise<ThreadPost> {
-        if (!user)
+        if (!auth.user)
             throw new HttpAccessDeniedError('You must be signed in to create a post.');
 
         const created = new ThreadPost(
             await this.db.query(ShitterThread).filter({ id: threadId }).findOne(),
-            await this.db.query(ShitterUser).filter({ id: user.id }).findOne(),
+            await this.db.query(ShitterUser).filter({ id: auth.user.id }).findOne(),
             body.content,
         );
 
@@ -51,8 +53,9 @@ export class PostsController {
     }
 }
 
-@http.controller('/users/:userId/posts')
 @Provider('controller')
+@http.controller('/users/:userId/posts')
+@http.group('Users', 'Threads', 'Posts')
 export class UserPostsController {
 
     constructor(
